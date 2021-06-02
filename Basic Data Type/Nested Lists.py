@@ -25,7 +25,7 @@ Berry
 Harry
 
 """
-
+""" 
 students=int(input())
 marklist=[]
 for i in range(students):
@@ -46,4 +46,12 @@ for i in marklist:
 
 #print(sorted(seconsStudent))
 for i in sorted(seconsStudent):
-    print(i)
+    print(i) """
+
+marksheet = []
+marksheet=[[input(),float(input())] for _ in range(int(input()))]
+
+second_highest = sorted(list(set([marks for name, marks in marksheet])))[1]
+print('\n'.join([a for a,b in sorted(marksheet) if b == second_highest]))
+
+print([marks for name, marks in marksheet])
