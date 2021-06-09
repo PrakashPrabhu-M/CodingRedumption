@@ -12,8 +12,7 @@ import pyautogui
 import keyboard
 from PIL import Image as im
    
-pyautogui.time.sleep(3)
-pyautogui.confirm('ok?')
+pyautogui.confirm('Start?')
 images=[]
 
 # take screenshot using pyautogui
