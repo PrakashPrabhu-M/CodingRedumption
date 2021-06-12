@@ -29,4 +29,4 @@ while keyboard.is_pressed('q')==False:
     # writing it to the disk using opencv
     image=im.fromarray(image)
     images.append(image)
-images[0].save('image.gif',save_all=True, append_images=images[1:], optimize=False, duration=100, loop=0)
+images[0].save('image.gif',save_all=True, append_images=images[1:], optimize=False, loop=0)
