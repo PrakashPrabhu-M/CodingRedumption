@@ -1,9 +1,10 @@
 # TODO: Create your data structure here after importing the right module
 
-queue=[]
+import queue
+que=queue.PriorityQueue()
 def insert(num):
-    queue.append(num)
-    queue.sort()
+    que.put(-num)
 
 def getMax():
-    return queue.pop(-1)
+    return -1*que.get()
+
