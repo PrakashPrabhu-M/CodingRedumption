@@ -1,30 +1,18 @@
-import queue
 s=input().split()
-que=queue.Queue()
-# res=0
-# op1=0
-# op2=0
-l=list(s[0])
-for i in s[1:]:
+stack=[]
+res=0
+op1=0
+op2=0
+for i in s:
     if i not in '+-*/':
-        que.put(i)
-
-# print(que.get())
-# print(que.get())
-# print(que.get())
-# print(que.get())
-    # else:
-    #     print(i)
-    #     op2=int(que.get())
-    #     op1=int(que.get())
-    #     print(op1,op2)
-    #     if i=='+':res=op1+op2
-    #     elif i=='-':res=op1-op2
-    #     elif i=='*':res=op1*op2
-    #     elif i=='/':res=op1/op2
-    #     que.put(res)
+        stack.append(i)
+        print(stack)
     else:
-        l.append(i)
-        l.append(que.get())
-print(l)
-print(eval(''.join([str(x) for x in l])))
+        print('before',stack)
+        op1=stack.pop()
+        op2=stack.pop()
+        print(op1,op2,i)
+        res=eval(f'{op2}{i}{op1}')
+        stack.append(res)
+        print('after',stack)
+print(stack)
