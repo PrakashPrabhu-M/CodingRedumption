@@ -1,11 +1,17 @@
-from queue import PriorityQueue as pq
+import heapq
 
 def reduceArray(n, arr):
-    que=pq()
-    for i in arr:
-        que.put(i)
-    element=que.get()
-    return element
+    li=[-x for x in arr]
+    heapq.heapify(li)
+    res=0
+    while len(li)!=1:
+        element1=heapq.heappop(li)*-1
+        element2=heapq.heappop(li)*-1
+        res=abs(element1-element2)
+        heapq.heappush(li,-res)
+        #heapq.heapify(li)
+    return -li[0]
+
 
 def main():
     n = int(input())
