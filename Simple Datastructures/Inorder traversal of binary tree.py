@@ -1,15 +1,19 @@
 """""
-def fun(node):
-    stack=[]
-    l=[]
-    current=node
-    while current:
-        stack.append(current)
-        current=current.next    
-        if current is None and stack:
-            l.append(stack.pop())
-            current=l[-1].right
-    return l
+def inorderTraversal(root):
+	s=[]
+	l=[]
+	current=root
+	while 1:	
+		while current:
+			s.append(current)
+			current=current.left
+		if len(s)!=0:
+			l.append(s[-1].val)
+			a=s.pop()
+			current=a.right
+		else:
+			break
+	return l
 
  """
  # Python program to do inorder traversal without recursion
