@@ -1,4 +1,4 @@
-"""""
+"""
 def inorderTraversal(root):
 	s=[]
 	l=[]
@@ -14,10 +14,8 @@ def inorderTraversal(root):
 		else:
 			break
 	return l
-
- """
- # Python program to do inorder traversal without recursion
-
+"""
+# Python program to do inorder traversal without recursion
 # A binary tree node
 class Node:
 	
